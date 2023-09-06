@@ -67,23 +67,17 @@
 
 
 % ========================================
-% @brief    章节计数器
-% ========================================
-\newcounter{mcmSectionCounter}
-
-% ========================================
 % @brief    一级标题（汉字编号）
 % @detail   这是最高等级的章节命令
 % ========================================
 \newcommand{\mcmSection}[1]{
     % 章节计数器自增一
-    \stepcounter{mcmSectionCounter}
     \stepcounter{section}
 
     % 具体的标题
     \begin{center}
         \textbf{\fontsize{20}{1.5}{
-            \mcmCNumber{\value{mcmSectionCounter}}\quad#1
+            \mcmCNumber{\value{section}}\quad#1
         }}
     \end{center}
 }
@@ -106,18 +100,6 @@
     \subsubsection{#1}
 }
 
-% % ==================== 设置标题标号为汉字 ====================
-% \ctexset{
-%   section={
-%     format+=\raggedright,
-%     name={,、},
-%     number=\chinese{section},
-%   }
-% }
-
-% \titleformat{\chapter}[display]
-% {\normalfont\huge\bfseries\centering}
-% {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
 
 % ==================== 设置目录超链接 ====================

@@ -15,7 +15,10 @@
 \RequirePackage[table,xcdraw]{xcolor}
 \RequirePackage{url}
 \RequirePackage{hyperref}       % 超链接
+\RequirePackage{ctex}
 % \RequireRackage{titlesec}       % 标题标号
+
+
 
 % 定义页边距
 \geometry{a4paper,left=1.25in,right=1.25in,top=1in,bottom=1in}
@@ -25,6 +28,83 @@
 \pagestyle{plain}
 % 修改行间距
 \linespread{1.25}
+
+% \newcounter{chineseSection}
+% \renewcommand{\thesection}{\CJKnumber{\value{chineseSection}}}
+
+
+% ==============================================
+% @brief    将阿拉伯数字转化为汉字
+% @detail   目前只能转换10以内的数字
+% ==============================================
+\newcommand{\mcmCNumber}[1]{%
+    \ifcase#1
+        零%
+    \or
+        一%
+    \or
+        二%
+    \or
+        三%
+    \or
+        四%
+    \or
+        五%
+    \or
+        六%
+    \or
+        七%
+    \or
+        八%
+    \or
+        九%
+    \or
+        十%
+    \else
+        UnKnown%
+    \fi
+}
+
+
+% ========================================
+% @brief    章节计数器
+% ========================================
+\newcounter{mcmSectionCounter}
+
+% ========================================
+% @brief    一级标题（汉字编号）
+% @detail   这是最高等级的章节命令
+% ========================================
+\newcommand{\mcmSection}[1]{
+    % 章节计数器自增一
+    \stepcounter{mcmSectionCounter}
+    \stepcounter{section}
+
+    % 具体的标题
+    \begin{center}
+        \textbf{\fontsize{20}{1.5}{
+            \mcmCNumber{\value{mcmSectionCounter}}\quad#1
+        }}
+    \end{center}
+}
+
+
+
+% ========================================
+% @brief    二级标题（汉字标号）
+% ========================================
+\newcommand{\mcmSubsection}[1]{
+    \subsection{#1}
+}
+
+
+
+% ========================================
+% @brief    三级标题（汉字标号）
+% ========================================
+\newcommand{\mcmSubsubsection}[1]{
+    \subsubsection{#1}
+}
 
 % % ==================== 设置标题标号为汉字 ====================
 % \ctexset{

@@ -16,6 +16,7 @@
 \RequirePackage{url}
 \RequirePackage{hyperref}       % 超链接
 \RequirePackage{ctex}
+\RequirePackage{enumitem}
 % \RequireRackage{titlesec}       % 标题标号
 
 
@@ -67,7 +68,7 @@
 
 
 % ========================================
-% @brief    一级标题（汉字编号）
+% @brief    一级标题（汉字标号）
 % @detail   这是最高等级的章节命令
 % ========================================
 \newcommand{\mcmSection}[1]{
@@ -101,6 +102,15 @@
 }
 
 
+
+% ========================================
+% @brief    算法描述环境
+% ========================================
+\newlist{mcmArithmetic}{enumerate}{1}
+\setlist[mcmArithmetic]{label=(\arabic*),
+                        before=\bfseries}
+
+                        
 
 % ==================== 设置目录超链接 ====================
 \hypersetup{

@@ -48,19 +48,29 @@
 \mcmSection{符号说明及名称定义}
 
 \begin{table}[]
+    % 表格居中
     \centering
-    \begin{tabular}{cc}
-    \hline
-    符号            & 意义                       \\ \hline
 
-    $Z_{n,l}$     & 文档$n$中第$l$个分词对应的主题编号     \\
-    $\alpha$      & 控制文档-主题分布的超参数/狄利克雷分布先验参数 \\
-    $\beta$       & 控制主题-词语分布的超参数/狄利克雷分布先验参数 \\
-    $w_{n,l}$     & 文档$n$中第$l$个分词对应的主题编号     \\
-    $\varphi_{k}$ & 主题$k$的词汇分布               \\
-    $M_{diff}$    & 题目难度矩阵                   \\
-    $L_{weight}$  & 题目难度值                    \\
-    $L_D$         & 题目难度系数序列                 \\
-    $S_{level}$   & 难度度量等级集合                 \\ \hline
-    \end{tabular}
+    % 调整行距
+    \renewcommand\arraystretch{1.5}
+    
+    % 放缩表格
+    \scalebox{1.2}{
+
+        \begin{tabular}{cc}
+        \hline
+        \textbf{\fontsize{13}{1.5}{符号}}            & \textbf{\fontsize{13}{1.5}{意义}}                       \\ \hline
+
+        $Z_{n,l}$     & 文档$n$中第$l$个分词对应的主题编号     \\
+        $\alpha$      & 控制文档-主题分布的超参数/狄利克雷分布先验参数 \\
+        $\beta$       & 控制主题-词语分布的超参数/狄利克雷分布先验参数 \\
+        $w_{n,l}$     & 文档$n$中第$l$个分词对应的主题编号     \\
+        $\varphi_{k}$ & 主题$k$的词汇分布               \\
+        $M_{diff}$    & 题目难度矩阵                   \\
+        $L_{weight}$  & 题目难度值                    \\
+        $L_D$         & 题目难度系数序列                 \\
+        $S_{level}$   & 难度度量等级集合                 \\ \hline
+        \end{tabular}
+    
+    }
 \end{table}

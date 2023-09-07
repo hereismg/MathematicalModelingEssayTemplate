@@ -1,0 +1,4 @@
+{
+    // 将默认编译器改为 xelatex
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+}

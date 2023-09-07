@@ -1,2 +1,9 @@
-# MathematicalModelingEssayTemplate
-Here is Mathematical Modeling Essay Template.
+# 全国大学生数学建模竞赛专用论文模板
+
+## 文件结构
+
+| 文件名        | 注释                                  |
+| ------------- | ------------------------------------- |
+| `parper.tex`  | letex文件编译的入口，类似于`main.cpp` |
+| `A-Cover.tex` | a                                     |
+

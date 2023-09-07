@@ -1,17 +1,18 @@
 \mcmSection{模型的建立与求解}
 
+\mcmSubsection{问题一：一氧化二氢的制备与存储}
+
+根据质量守恒定律、动量定理、能量守恒定律和黏性定律，存在流体力学基本方程组：
+
 \begin{equation}
-    x = 1
+    \begin{cases}
+        \frac{\partial\rho}{\partial t} + \nabla \cdot (\rho u) = 0 &\text{连续性方程}  \\
+        \rho \frac{Du}{Dt} = \rho F + \nabla \cdot P &\text{运动方程}    \\
+        \rho \frac{De}{Dt} = P:S + \nabla \cdot (k\nabla T) + \rho \dot{q}  &\text{能量方程}
+    \end{cases}
 \end{equation}
 
-\begin{mcmArithmetic}
-    \item first
-    \item second 
-    \begin{mcmMetaArithmetic}
-        \item 2
-        \item 3
-    \end{mcmMetaArithmetic}
-    \item thrid
-\end{mcmArithmetic}
+
+\mcmSubsection{问题二：活络}
 
 \mcmSection{模型的评价与改进}

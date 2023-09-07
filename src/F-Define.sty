@@ -104,13 +104,27 @@
 
 
 % ========================================
-% @brief    算法描述环境
+% @brief    算法描述的元环境
 % ========================================
-\newlist{mcmArithmetic}{enumerate}{1}
-\setlist[mcmArithmetic]{label=(\arabic*),
-                        before=\bfseries}
+\newlist{mcmMetaArithmetic}{enumerate}{2}
+\setlist[mcmMetaArithmetic]{
+    label=(\arabic*),
+    before=\bfseries,
+    itemsep=10pt
+    }
 
-                        
+
+% ========================================
+% @brief    算法描述
+% ========================================
+\newenvironment{mcmArithmetic}{
+    算法清单
+    \begin{mcmMetaArithmetic}
+}{
+    \end{mcmMetaArithmetic}
+}
+
+
 
 % ==================== 设置目录超链接 ====================
 \hypersetup{
@@ -141,23 +155,12 @@
     }
     {}
 
-% % ==================== 定义“算法描述”环境 ====================
-% \newcounter{describeArithmetic}
-% \newenvironment{arithmetic}{
-%         \fbox
-
-%         \stepcounter{describeArithmetic}
-%         {\heiti 算法描述} \thedescribeArithmetic
-
-%         \begin{minipage}[h]{30em} 
-%         \centering
-%         \kaishu
-%     }{
-%         \end{minipage}
-%     }
 
 
-% ==================== 定义“代码”环境 ====================
+% ===================================================
+% @brief    “代码”环境
+% @warming  要想在代码环境中添加中文字体，请选择xelatex编译进行编译
+% ===================================================
 \lstset{
     basicstyle          =   \ttfamily,          % 基本代码风格
     keywordstyle        =   \bfseries,          % 关键字风格

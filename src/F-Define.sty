@@ -180,6 +180,14 @@
 
 
 % ======================================================
-% @brief    定义“定理”环境
+% @brief    定理
 % ======================================================
-\newtheorem{theorem}{定理}[section]
+\newcounter{mcmTheoremCounter}
+\newenvironment{mcmTheorem}[1]{
+    \kaishu
+    \stepcounter{mcmTheoremCounter}
+    \quad\newline
+    {\heiti 定理 \themcmTheoremCounter \quad #1}
+}{
+    \newline
+}

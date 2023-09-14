@@ -74,6 +74,9 @@
     % 章节计数器自增一
     \stepcounter{section}
 
+    % 将该section添加到标题添加到书签中
+    \addcontentsline{toc}{section}{\thesection\quad#1}
+
     % 具体的标题
     \begin{center}
         \textbf{\fontsize{20}{1.5}{
@@ -135,6 +138,7 @@
     pdftitle={Paper},       % 将PDF文件的标题设置为“Paper”
     bookmarks=true,         % 生成 PDF 书签
     pdfpagemode=FullScreen, % 在打开PDF文件时，将其设置为全屏模式
+    bookmarksnumbered=true  % 书签自带章节编号
 }
 
 
@@ -166,36 +170,25 @@
 \lstset{
     % 基本代码风格
     basicstyle          =   \ttfamily,
-    
     % 关键字风格
     keywordstyle        =   \bfseries,
-
     % 注释的风格，斜体
     commentstyle        =   \rmfamily\itshape,
-
     % 字符串风格
     stringstyle         =   \ttfamily,
-
     % 别问为什么，加上这个
     flexiblecolumns,
-
     % 行号的位置在左边
     numbers             =   left,
-
     % 是否显示空格，显示了有点乱，所以不现实了
     showspaces          =   false,
-
     % 行号的样式，小五号，tt等宽字体
     numberstyle         =   \zihao{-4}\ttfamily,
-
     showstringspaces    =   false,
-
     % 这段代码的名字所呈现的位置，t指的是top上面
     captionpos          =   t,
-
     % 显示边框
     frame               =   lrtb,
-
     % 自动换行
     breaklines          =   true
 }

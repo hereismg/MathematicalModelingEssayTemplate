@@ -75,7 +75,7 @@
     \stepcounter{section}
 
     % 将该section添加到标题添加到书签中
-    \addcontentsline{toc}{section}{\thesection\quad#1}
+    \addcontentsline{toc}{section}{\thesection　#1}
 
     % 具体的标题
     \begin{center}
@@ -138,22 +138,27 @@
     pdftitle={Paper},       % 将PDF文件的标题设置为“Paper”
     bookmarks=true,         % 生成 PDF 书签
     pdfpagemode=FullScreen, % 在打开PDF文件时，将其设置为全屏模式
-    bookmarksnumbered=true  % 书签自带章节编号
+    bookmarksnumbered=true, % 书签自带章节编号
 }
 
 
 % ======================================================
 % @brief    定义“例题”环境
 % ======================================================
+
+% 例题计数器
 \newcounter{questionCounter}
+
+% 例题环境
 \newenvironment{question}
     {
         \kaishu
-        \stepcounter{questionCounter}
+        \refstepcounter{questionCounter}
         {\heiti 例题} \thequestionCounter　
     }
     {}
 
+% 例题环境（不计数版本）
 \newenvironment{question*}
     {
         \kaishu
@@ -164,8 +169,8 @@
 
 
 % ===================================================
-% @brief    “代码”环境
-% @warming  要想在代码环境中添加中文字体，请选择xelatex编译进行编译
+% @brief        “代码”环境
+% @attention    要想在代码环境中添加中文字体，请选择xelatex编译进行编译
 % ===================================================
 \lstset{
     % 基本代码风格
@@ -180,7 +185,7 @@
     flexiblecolumns,
     % 行号的位置在左边
     numbers             =   left,
-    % 是否显示空格，显示了有点乱，所以不现实了
+    % 是否显示空格，显示了有点乱，所以不显示了
     showspaces          =   false,
     % 行号的样式，小五号，tt等宽字体
     numberstyle         =   \zihao{-4}\ttfamily,
@@ -198,16 +203,17 @@
 % ======================================================
 % @brief    定理
 % ======================================================
-
-% 定理计数器
 \newcounter{mcmTheoremCounter}
-
-% 定理环境
 \newenvironment{mcmTheorem}[1]{
+    % 为了和其他文本区分，定理内部用楷书显示
     \kaishu
-    \stepcounter{mcmTheoremCounter}
+
+    % 引用计数器加一，这里不使用stepcounter命令给计数器加一！！！
+    \refstepcounter{mcmTheoremCounter}
+
+    % 换行
     \quad\newline
+
+    % 标题
     {\heiti 定理 \themcmTheoremCounter \quad #1}
-}{
-    \newline
-}
+}{}

@@ -1,4 +1,4 @@
 {
-    // 将默认编译器改为 xelatex
+    // 将默认编译器改为 xelatex，这样在代码环境中就可以输入中文了
     "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
 }

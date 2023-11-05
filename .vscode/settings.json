@@ -1,4 +1,7 @@
 {
     // 将默认编译器改为 xelatex，这样在代码环境中就可以输入中文了
-    "latex-workshop.latex.recipe.default": "latexmk (xelatex)"
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+
+    // 将tex编译pdf时产生的中间文件存放到build目录中，与此同时，.gitignore文件会告诉git忽略该文件夹
+    "latex-workshop.latex.outDir": "%DIR%/build"
 }
